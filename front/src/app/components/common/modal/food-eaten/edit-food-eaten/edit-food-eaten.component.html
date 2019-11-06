@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<mat-dialog-content>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-select placeholder="Food" [(ngModel)]="foodEaten.food" [compareWith]="compareFn" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let food of foods" [value]="food">
+            {{food.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" required placeholder="Serving quantity" size="3" [(ngModel)]="foodEaten.servingQty">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button type="button" color="primary" (click)="save()">Save</button>
+  <button mat-raised-button type="button" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

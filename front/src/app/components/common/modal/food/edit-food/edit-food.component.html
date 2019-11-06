@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<mat-dialog-content>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput placeholder="Name" size="3" [(ngModel)]="food.name">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Calories" size="3" [(ngModel)]="food.calories">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Fat" size="3" [(ngModel)]="food.fat">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Saturated Fat" size="3" [(ngModel)]="food.saturatedFat">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Carbohydrates" size="3" [(ngModel)]="food.carbohydrates">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Fiber" size="3" [(ngModel)]="food.fiber">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Sodium" size="3" [(ngModel)]="food.sodium">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Protein" size="3" [(ngModel)]="food.protein">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Sugar" size="3" [(ngModel)]="food.sugar">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button type="button" color="primary" (click)="save()">Save</button>
+  <button mat-raised-button type="button" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+

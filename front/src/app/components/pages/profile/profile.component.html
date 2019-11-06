@@ -1,0 +1,70 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center">
+  <mat-card elevation="5" fxFlex>
+    <mat-card-subtitle>
+    </mat-card-subtitle>
+    <mat-card-title>
+      <h2>{{ title }}</h2>
+    </mat-card-title>
+    <mat-card-content>
+      <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <mat-grid-list cols="1" rowHeight="100px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [(ngModel)]="user.username" formControlName="username" placeholder="Username">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Password" [(ngModel)]="user.password" formControlName="password"
+                     type="password">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Email" [(ngModel)]="user.email" formControlName="email" type="email">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="First Name" [(ngModel)]="user.firstname" formControlName="firstname">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Last Name" [(ngModel)]="user.lastname" formControlName="lastname">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="date-form-field">
+              <input [matDatepicker]="picker" matInput placeholder="birthday" [(ngModel)]="user.birthday" formControlName="birthday" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi="true" #picker></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <label>Gender:</label>&nbsp;
+            <mat-radio-group formControlName="gender" [(ngModel)]="user.gender">
+              <mat-radio-button value="male">Male</mat-radio-button>&nbsp;
+              <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Height" [(ngModel)]="user.height" formControlName="height" type="number">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Weight" [(ngModel)]="user.weight" formControlName="weight" type="number">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <button type="submit" [disabled]="!signupForm.form.valid" mat-raised-button color="primary">Update Profile
+        </button>
+      </form>
+      <br>
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      <br>
+    </mat-card-content>
+  </mat-card>
+</div>

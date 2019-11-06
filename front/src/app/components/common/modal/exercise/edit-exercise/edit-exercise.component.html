@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<mat-dialog-content>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput placeholder="Code" required [(ngModel)]="exercise.code">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput type="number" placeholder="MET" required [(ngModel)]="exercise.met">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput placeholder="Category" required [(ngModel)]="exercise.category">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput placeholder="Description" required [(ngModel)]="exercise.description">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button type="button" color="primary" (click)="save()">Save</button>
+  <button mat-raised-button type="button" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

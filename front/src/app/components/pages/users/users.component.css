@@ -1,0 +1,19 @@
+.table-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 6%;
+}
+
+.centered {
+    width: 80%;
+    margin: auto;
+}
+
+.mat-button {
+    min-width: 0px;
+    padding: 0 8px;
+}
+
+.add-food-btn {
+    background-color: rgb(43, 230, 43);
+}

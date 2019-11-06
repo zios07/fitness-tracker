@@ -1,0 +1,11 @@
+.chartDiv {
+    width: 90%; 
+    height: 400px; 
+    overflow: hidden;
+    margin: auto;
+    margin-top: 5%;
+}
+
+::ng-deep .mat-tab-labels{
+    justify-content: center; /* align items in Main Axis */
+}
